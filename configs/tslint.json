@@ -1,0 +1,309 @@
+{
+	"extends": [
+		"tslint-eslint-rules"
+	],
+	"rules": {
+		"trailing-comma": [
+			true,
+			{
+			  "multiline": "never",
+			  "singleline": "never",
+			  "esSpecCompliant": true
+			}
+		],
+		"no-conditional-assignment": true,
+		"no-console": false,
+		"no-constant-condition": true,
+		"no-control-regex": true,
+		"no-debugger": true,
+		"no-empty": true,
+		"no-empty-character-class": true,
+		"no-ex-assign": true,
+		"no-extra-boolean-cast": true,
+		"no-inner-declarations": [
+			true,
+			"functions"
+		],
+		"no-invalid-regexp": true,
+		"no-regex-spaces": true,
+		"ter-no-sparse-arrays": [
+			true
+		],
+		"no-unexpected-multiline": true,
+		"no-unsafe-finally": true,
+		"use-isnan": true,
+		"cyclomatic-complexity": true,
+		"curly": true,
+		"switch-default": true,
+		"triple-equals": true,
+		"forin": true,
+		"no-arg": true,
+		"no-eval": true,
+		"no-switch-case-fall-through": true,
+		"no-invalid-this": true,
+		"label-position": true,
+		"no-multi-spaces": [
+			true,
+			{
+				"exceptions": {
+					"PropertyAssignment": false
+				}
+			}
+		],
+		"no-unused-expression": true,
+		"no-construct": true,
+		"ter-no-proto": true,
+		"ter-no-script-url": true,
+		"ter-no-self-compare": true,
+		"no-string-throw": true,
+		"radix": true,
+		"no-shadowed-variable": true,
+		"array-bracket-spacing": [
+			true,
+			"always"
+		],
+		"block-spacing": [
+			true,
+			"always"
+		],
+		"brace-style": [
+			true,
+			"1tbs"
+		],
+		"variable-name": [
+			true,
+			"ban-keywords",
+			"check-format",
+			"allow-pascal-case"
+		],
+		"ter-computed-property-spacing": [
+			true,
+			"never"
+		],
+		"eofline": false,
+		"ter-func-call-spacing": [
+			false
+		],
+		"indent": [
+			true,
+			"tabs",
+			4
+		],
+		"linebreak-style": [
+			false
+		],
+		"max-file-line-count": [
+			true,
+			200
+		],
+		"new-parens": true,
+		"no-bitwise": true,
+		"ter-no-mixed-spaces-and-tabs": {
+			"type": "tabs"
+		},
+		"no-consecutive-blank-lines": true,
+		"no-trailing-whitespace": true,
+		"object-curly-spacing": [
+			true,
+			"always"
+		],
+		"one-variable-per-declaration": true,
+		"ter-padded-blocks": [
+			true,
+			"never"
+		],
+		"object-literal-key-quotes": [
+			true,
+			"as-needed"
+		],
+		"semicolon": [
+			true,
+			"always"
+		],
+		"comment-format": [
+			true,
+			"check-uppercase"
+		],
+		"ter-arrow-spacing": [
+			true
+		],
+		"no-var-keyword": true,
+		"object-literal-shorthand": true,
+		"ter-prefer-arrow-callback": [
+			true
+		],
+		"prefer-const": true,
+		"adjacent-overload-signatures": true,
+		"ban-ts-ignore": true,
+		"member-access": true,
+		"member-ordering": [
+			true,
+			{
+				"order": [
+					"public-static-field",
+					"public-instance-field",
+					"protected-static-field",
+					"protected-instance-field",
+					"private-static-field",
+					"private-instance-field",
+					"public-constructor",
+					"protected-constructor",
+					"private-constructor",
+					"public-static-method",
+					"protected-static-method",
+					"private-static-method",
+					"public-instance-method",
+					"protected-instance-method",
+					"private-instance-method"
+				]
+			}
+		],
+		"no-any": true,
+		"no-empty-interface": true,
+		"no-inferrable-types": true,
+		"no-internal-module": true,
+		"no-namespace": true,
+		"no-non-null-assertion": true,
+		"no-parameter-reassignment": true,
+		"no-reference": true,
+		"no-unnecessary-type-assertion": true,
+		"no-var-requires": true,
+		"only-arrow-functions": [
+			true,
+			"allow-named-functions"
+		],
+		"prefer-for-of": true,
+		"await-promise": true,
+		"ban-comma-operator": true,
+		"function-constructor": true,
+		"no-duplicate-super": true,
+		"no-duplicate-switch-case": true,
+		"no-duplicate-variable": true,
+		"no-dynamic-delete": true,
+		"no-floating-promises": true,
+		"no-for-in-array": true,
+		"no-implicit-dependencies": [true, "dev"],
+		"no-inferred-empty-object-type": true,
+		"no-invalid-template-strings": true,
+		"no-misused-new": true,
+		"no-null-keyword": true,
+		"no-object-literal-type-assertion": true,
+		"no-return-await": true,
+		"no-sparse-arrays": true,
+		"no-string-literal": true,
+		"no-submodule-imports": true,
+		"no-this-assignment": true,
+		"no-unbound-method": true,
+		"no-void-expression": [
+			true,
+			"ignore-arrow-function-shorthand"
+		],
+		"prefer-conditional-expression": true,
+		"prefer-object-spread": true,
+		"restrict-plus-operands": true,
+		"strict-type-predicates": true,
+		"unnecessary-constructor": true,
+		"deprecation": true,
+		"use-default-type-parameter": true,
+		"max-classes-per-file": [
+			true,
+			1
+		],
+		"no-duplicate-imports": true,
+		"no-mergeable-namespace": true,
+		"no-require-imports": true,
+		"prefer-readonly": true,
+		"array-type": [
+			true,
+			"array-simple"
+		],
+		"arrow-parens": [
+			true,
+			"ban-single-arg-parens"
+		],
+		"arrow-return-shorthand": true,
+		"binary-expression-operand-order": true,
+		"class-name": true,
+		"completed-docs": [
+			true,
+			"classes",
+			"enums",
+			"enum-members",
+			"functions",
+			"interfaces",
+			"methods",
+			"namespaces",
+			"properties",
+			"types"
+		],
+		"encoding": true,
+		"import-spacing": true,
+		"interface-name": [
+			true,
+			"always-prefix"
+		],
+		"jsdoc-format": [
+			true,
+			"check-multiline-start"
+		],
+		"newline-before-return": true,
+		"no-angle-bracket-type-assertion": true,
+		"no-boolean-literal-compare": true,
+		"no-irregular-whitespace": true,
+		"no-unnecessary-initializer": true,
+		"number-literal-format": true,
+		"one-line": [
+			true,
+			"check-catch",
+			"check-finally",
+			"check-else",
+			"check-open-brace"
+		],
+		"prefer-method-signature": true,
+		"prefer-switch": [
+			true,
+			4
+		],
+		"prefer-template": [
+			true,
+			"allow-single-concat"
+		],
+		"prefer-while": true,
+		"return-undefined": true,
+		"space-before-function-paren": [
+			true,
+			{
+				"anonymous": "always",
+				"named": "never",
+				"asyncArrow": "always",
+				"method": "never",
+				"constructor": "never"
+			}
+		],
+		"space-within-parens": [
+			true,
+			0
+		],
+		"switch-final-break": [
+			true,
+			"always"
+		],
+		"type-literal-delimiter": true,
+		"unnecessary-bind": true,
+		"whitespace": [
+			true,
+			"check-decl",
+			"check-operator",
+			"check-seperator",
+			"check-rest-spread",
+			"check-type",
+			"check-typecast"
+		],
+		"max-line-length": [
+			true,
+			{
+				"limit": 125
+			}
+		]
+	}
+}

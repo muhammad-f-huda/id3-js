@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "ES3",
+		"module": "commonjs",
+		"lib": [
+			"esnext"
+		],
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"removeComments": false,
+		"downlevelIteration": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"watch": false,
+		"experimentalDecorators": true,
+		"declaration": true
+	}
+}
