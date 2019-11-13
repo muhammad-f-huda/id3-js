@@ -1,21 +1,23 @@
 {
-  "name": "ts-id3",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/iconv-lite": "0.0.1",
-    "@types/node": "^12.12.7",
-    "tslint": "5.20.1",
-    "tslint-eslint-rules": "5.4.0"
-  },
-  "dependencies": {
-    "iconv-lite": "^0.5.0"
-  }
+	"name": "ts-id3",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"test": "tsc && node dist/index.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/iconv-lite": "0.0.1",
+		"@types/node": "12.12.7",
+		"tslint": "5.20.1",
+		"tslint-eslint-rules": "5.4.0",
+		"typescript": "3.7.2"
+	},
+	"dependencies": {
+		"iconv-lite": "^0.5.0"
+	}
 }
