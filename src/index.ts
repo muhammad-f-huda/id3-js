@@ -31,7 +31,7 @@ class NodeID3 {
 	 * @param frames - The metadata frames to write to the file
 	 * @param file - The path of the file to write the frames to
 	 */
-	public write(frames: IFrames, file: string): undefined;
+	public write(file: string, frames: IFrames): undefined;
 
 	/**
 	 * Write ID3 frames to a buffer
@@ -39,8 +39,8 @@ class NodeID3 {
 	 * @param buffer - The buffer to write the frames to
 	 * @returns The buffer with the frames written
 	 */
-	public write(frames: IFrames, buffer: Buffer): Buffer;
-	public write(frames: IFrames, fileBuffer: Buffer | string) {
+	public write(buffer: Buffer, frames: IFrames): Buffer;
+	public write(fileBuffer: Buffer | string, frames: IFrames) {
 		const currentData = fileBuffer instanceof Buffer ? fileBuffer : readFileSync(fileBuffer);
 
 		const newData = Buffer.concat([
@@ -94,10 +94,18 @@ class NodeID3 {
 	}
 
 	/**
-	 * Read ID3 frames from a buffer
-	 * @param fileBuffer - The buffer or path to the file to read the frames from
-	 * @returns The frames in the buffer
+	 * Read ID3 information from a file
+	 * @param file - The path to the file for which to read the ID3 information
+	 * @returns The ID3 information
 	 */
+	public read(file: string): IFrames;
+
+	/**
+	 * Read ID3 information from a buffer
+	 * @param fileBuffer - The buffer to read the information from
+	 * @returns The ID3 information
+	 */
+	public read(buffer: Buffer): IFrames;
 	public read(fileBuffer: string | Buffer) {
 		const bufferToRead = fileBuffer instanceof Buffer ? fileBuffer : readFileSync(fileBuffer);
 
@@ -128,7 +136,7 @@ class NodeID3 {
 			const bodyFrameHeader = Buffer.alloc(textframeHeaderSize);
 			ID3FrameBody.copy(bodyFrameHeader, 0, currentPosition);
 
-			const decodeBuffer = Buffer.from(ID3Version > 2 ? [
+			const frameSizeBuffer = Buffer.from(ID3Version > 2 ? [
 				bodyFrameHeader[4],
 				bodyFrameHeader[5],
 				bodyFrameHeader[6],
@@ -139,9 +147,9 @@ class NodeID3 {
 				bodyFrameHeader[5]
 			]);
 
-			const byteLength = ID3Version > 2 ? 4 : 3;
-
-			const bodyFrameSize = ID3Version === 4 ? this.decodeSize(decodeBuffer) : decodeBuffer.readUIntBE(0, byteLength);
+			const bodyFrameSize = ID3Version === 4 ?
+				this.decodeSize(frameSizeBuffer) :
+				frameSizeBuffer.readUIntBE(0, ID3Version > 2 ? 4 : 3);
 
 			if (bodyFrameSize > (frameSize - currentPosition)) {
 				break;
@@ -223,10 +231,10 @@ class NodeID3 {
 	public update(frames: IFrames, buffer: Buffer): Buffer;
 	public update(frames: IFrames, fileBuffer: string | Buffer){
 		//Typecast fileBuffer to one or the other of string or buffer, it will be handled correctly at runtime
-		const result = this.write({
-			...this.read(fileBuffer),
+		const result = this.write(fileBuffer as Buffer, {
+			...this.read(fileBuffer as Buffer),
 			...frames
-		}, fileBuffer as Buffer);
+		});
 
 		return typeof fileBuffer === "string" ? undefined : result;
 	}
