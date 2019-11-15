@@ -1,14 +1,21 @@
 {
-	"name": "ts-id3",
+	"name": "@calme1709/id3.js",
 	"version": "1.0.0",
 	"description": "",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"main": "index.js",
+	"types": "index.d.ts",
 	"scripts": {
 		"build": "tsc",
 		"test": "tsc && node dist/index.js"
 	},
-	"author": "",
+	"keywords": [
+		"metadata",
+		"id3",
+		"typescript",
+		"music",
+		"mp3"
+	],
+	"author": "Calme1709",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/iconv-lite": "0.0.1",
@@ -19,5 +26,8 @@
 	},
 	"dependencies": {
 		"iconv-lite": "^0.5.0"
-	}
+	},
+	"files": [
+		"dist/"
+	]
 }
