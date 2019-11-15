@@ -45,7 +45,7 @@ class NodeID3 {
 
 		const newData = Buffer.concat([
 			this.create(frames),
-			this.removeTag(currentData)
+			this.remove(currentData)
 		]);
 
 		if(typeof fileBuffer === "string"){
@@ -175,15 +175,15 @@ class NodeID3 {
 	 * Remove the ID3 tag from a file
 	 * @param file - The file to remove the ID3 tag from
 	 */
-	public removeTag(file: string): undefined;
+	public remove(file: string): undefined;
 
 	/**
 	 * Remove all the ID3 tag from a buffer
 	 * @param buffer - The buffer to remove the tag from
 	 * @returns The buffer without the ID3 tag
 	 */
-	public removeTag(buffer: Buffer): Buffer;
-	public removeTag(data: string | Buffer){
+	public remove(buffer: Buffer): Buffer;
+	public remove(data: string | Buffer){
 		const dataBuffer = typeof data === "string" ? readFileSync(data) : data;
 
 		const ID3Offset = this.getFramePosition(dataBuffer);
