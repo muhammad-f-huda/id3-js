@@ -1,6 +1,6 @@
 {
-	"name": "@calme1709/id3.js",
-	"version": "1.0.0",
+	"name": "@calme1709/id3-js",
+	"version": "1.0.3",
 	"description": "",
 	"main": "index.js",
 	"types": "index.d.ts",
@@ -17,6 +17,9 @@
 	],
 	"author": "Calme1709",
 	"license": "ISC",
+	"repository": {
+		"url": "https://github.com/Calme1709/id3-js"
+	},
 	"devDependencies": {
 		"@types/iconv-lite": "0.0.1",
 		"@types/node": "12.12.7",

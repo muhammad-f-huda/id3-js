@@ -8,6 +8,7 @@ import Frames, {
 	SpecialFrameAlias,
 	IUserDefinedTextFrame
 } from "./frameDefinitions";
+import { printBuffer } from "./utils";
 
 /**
  * A class which handles all of the decoding of
@@ -133,6 +134,8 @@ export default class FrameDecoder {
 	 * @returns The user defined text frame
 	 */
 	private static readUserDefinedTextFrame(data: Buffer){
+		printBuffer(data);
+
 		if(data[0] === 0x00) {
 			return {
 				description: iconv.decode(data, "ISO-8859-1").substring(1, data.indexOf(0x00, 1)).replace(/\0/g, ""),
@@ -155,6 +158,6 @@ export default class FrameDecoder {
 			};
 		}
 
-		return {};
+		return undefined;
 	}
 }

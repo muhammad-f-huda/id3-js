@@ -189,12 +189,16 @@ export default class FrameDefinitions {
 	 * @returns - The frame alias
 	 */
 	public static convertNameToAlias(frameName: AllFrameNames){
-		return flipObject({
-			...this.textFrames,
-			...this.specialFrames,
-			...this.textFramesV220,
-			...this.specialFramesV220
-		})[frameName];
+		return {
+			...flipObject({
+				...this.textFrames,
+				...this.specialFrames
+			}),
+			...flipObject({
+				...this.textFramesV220,
+				...this.specialFramesV220
+			})
+		}[frameName];
 	}
 
 	/**

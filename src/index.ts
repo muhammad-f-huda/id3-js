@@ -121,6 +121,9 @@ class NodeID3 {
 		const ID3Frame = Buffer.alloc(frameSize + 1);
 		const ID3FrameBody = Buffer.alloc(frameSize - 10 + 1);
 		bufferToRead.copy(ID3Frame, 0, framePosition);
+
+		console.log((ID3Frame.subarray(0, 10).toString("hex").match(/../g) as RegExpMatchArray).join(' '));
+
 		bufferToRead.copy(ID3FrameBody, 0, framePosition + 10);
 
 		//ID3 version e.g. 3 if ID3v2.3.0
@@ -136,16 +139,10 @@ class NodeID3 {
 			const bodyFrameHeader = Buffer.alloc(textframeHeaderSize);
 			ID3FrameBody.copy(bodyFrameHeader, 0, currentPosition);
 
-			const frameSizeBuffer = Buffer.from(ID3Version > 2 ? [
-				bodyFrameHeader[4],
-				bodyFrameHeader[5],
-				bodyFrameHeader[6],
-				bodyFrameHeader[7]
-			] : [
-				bodyFrameHeader[3],
-				bodyFrameHeader[4],
-				bodyFrameHeader[5]
-			]);
+			const frameSizeBuffer = Buffer.from(ID3Version > 2 ?
+				[ bodyFrameHeader[4], bodyFrameHeader[5], bodyFrameHeader[6], bodyFrameHeader[7] ] :
+				[ bodyFrameHeader[3], bodyFrameHeader[4], bodyFrameHeader[5] ]
+			);
 
 			const bodyFrameSize = ID3Version === 4 ?
 				this.decodeSize(frameSizeBuffer) :
