@@ -101,7 +101,7 @@ ID3JS.remove("./song.mp3");
 import fs from "fs";
 import ID3JS from "@calme1709/id3-js";
 
-elt buffer = fs.readFileSync("./song.mp3");
+let buffer = fs.readFileSync("./song.mp3");
 
 buffer = ID3JS.remove(buffer);
 ```
