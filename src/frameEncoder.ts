@@ -7,7 +7,6 @@ import FrameDefinitions, {
 	ISpecialTextFrame,
 	IUserDefinedTextFrame
 } from "./frameDefinitions";
-import { readFileSync } from "fs";
 
 /**
  * Handles the encoding of frames
@@ -140,8 +139,7 @@ export default class FrameEncoder {
 	 * @param data - The data for this image frame, either a buffer or a path to a file
 	 * @returns - The buffer containing the frame
 	 */
-	private static createImageFrame(data: Buffer | string){
-		const apicData = data instanceof Buffer ? data : Buffer.from(readFileSync(data, "binary"), "binary");
+	private static createImageFrame(apicData: Buffer){
 		const bHeader = Buffer.alloc(10, 0);
 		bHeader.write("APIC", 0);
 
