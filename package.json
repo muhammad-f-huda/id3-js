@@ -2,7 +2,7 @@
 	"name": "id3-js",
 	"version": "1.0.3",
 	"description": "",
-	"main": "index.ts",
+	"main": "src/index.ts",
 	"types": "index.d.ts",
 	"scripts": {
 		"build": "tsc",
@@ -28,6 +28,7 @@
 		"typescript": "3.7.2"
 	},
 	"dependencies": {
+                "buffer": "^5.5.0",
 		"iconv-lite": "^0.5.0"
 	},
 	"files": [
