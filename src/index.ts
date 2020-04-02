@@ -17,7 +17,7 @@ export interface IDecodedFrame {
 	body: Buffer;
 }
 
-import { readFileSync, writeFileSync } from "fs";
+// import { readFileSync, writeFileSync } from "fs";
 import FrameDecoder from "./frameDecoder";
 import { IFrames, AllFrameNames } from "./frameDefinitions";
 import FrameEncoder from "./frameEncoder";
@@ -40,19 +40,19 @@ class NodeID3 {
 	 * @returns The buffer with the frames written
 	 */
 	public write(buffer: Buffer, frames: IFrames): Buffer;
-	public write(fileBuffer: Buffer | string, frames: IFrames) {
-		const currentData = fileBuffer instanceof Buffer ? fileBuffer : readFileSync(fileBuffer);
+	public write(currentData: Buffer | string, frames: IFrames) {
+		// const currentData = fileBuffer instanceof Buffer ? fileBuffer : readFileSync(fileBuffer);
 
 		const newData = Buffer.concat([
 			this.create(frames),
 			this.remove(currentData)
 		]);
 
-		if(typeof fileBuffer === "string"){
+		/*if(typeof fileBuffer === "string"){
 			writeFileSync(fileBuffer, newData, "binary");
 
 			return undefined;
-		}
+		}*/
 
 		return newData;
 	}
@@ -106,8 +106,8 @@ class NodeID3 {
 	 * @returns The ID3 information
 	 */
 	public read(buffer: Buffer): IFrames;
-	public read(fileBuffer: string | Buffer) {
-		const bufferToRead = fileBuffer instanceof Buffer ? fileBuffer : readFileSync(fileBuffer);
+	public read(bufferToRead: string | Buffer) {
+		// const bufferToRead = fileBuffer instanceof Buffer ? fileBuffer : readFileSync(fileBuffer);
 
 		const framePosition = this.getFramePosition(bufferToRead);
 
@@ -180,8 +180,8 @@ class NodeID3 {
 	 * @returns The buffer without the ID3 tag
 	 */
 	public remove(buffer: Buffer): Buffer;
-	public remove(data: string | Buffer){
-		const dataBuffer = typeof data === "string" ? readFileSync(data) : data;
+	public remove(dataBuffer: Buffer){
+		// const dataBuffer = typeof data === "string" ? readFileSync(data) : data;
 
 		const ID3Offset = this.getFramePosition(dataBuffer);
 
@@ -203,11 +203,11 @@ class NodeID3 {
 
 		const newData = data.slice(ID3Offset + this.decodeSize(hSize) + 10);
 
-		if(typeof data === "string"){
+		/*if(typeof data === "string"){
 			writeFileSync(data, newData, "binary");
 
 			return undefined;
-		}
+		}*/
 
 		return data.slice(ID3Offset + this.decodeSize(hSize) + 10);
 	}
