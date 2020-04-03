@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 /*
  * Used specification: http://id3.org/id3v2.3.0
  */
