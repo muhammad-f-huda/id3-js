@@ -1,4 +1,5 @@
 import { IDecodedFrame } from ".";
+import { Buffer } from 'buffer';
 import iconv from "iconv-lite";
 import Frames, {
 	IFrames,
