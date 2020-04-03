@@ -1,4 +1,5 @@
 import { flipObject } from "./utils";
+import { Buffer } from 'buffer';
 
 export type V2FrameName = "TAL" | "TBP" | "TCM" | "TCO" | "TCR" | "TDA" | "TDY" | "TEN" | "TXT" | "TFT" | "TIM" | "TT1" | "TT2" | "TT3" | "TKE" | "TLA" | "TLE" | "TMT" | "TOT" | "TOF" | "TOL" | "TOA" | "TOR" | "TP1" | "TP2" | "TP3" | "TP4" | "TPA" | "TPB" | "TRK" | "TRD" | "TSI" | "TRC" | "TSS" | "TYE";
 export type V2FrameAlias = "album" | "bpm" | "composer" | "genre" | "copyright" | "date" | "playlistDelay" | "encodedBy" | "textWriter" | "fileType" | "time" | "contentGroup" | "title" | "subtitle" | "initialKey" | "language" | "length" | "mediaType" | "originalTitle" | "originalFilename" | "originalTextwriter" | "originalArtist" | "originalYear" | "artist" | "performerInfo" | "conductor" | "remixArtist" | "partOfSet" | "publisher" | "trackNumber" | "recordingDates" | "size" | "ISRC" | "encodingTechnology" | "year";
