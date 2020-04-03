@@ -1,4 +1,5 @@
 import iconv from "iconv-lite";
+import { Buffer } from 'buffer';
 import FrameDefinitions, {
 	IFrames,
 	AllFrameAliases,
